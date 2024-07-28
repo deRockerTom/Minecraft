@@ -6,30 +6,47 @@ import win32gui
 import win32api
 import win32con
 import keyboard
+from constants import (
+    FISHING_ROD__TOP,
+    FISHING_ROD__HEIGHT,
+    FISHING_ROD__LEFT,
+    FISHING_ROD__WIDTH,
+    AQUARIUM_BAR__TOP,
+    AQUARIUM_BAR__HEIGHT,
+    AQUARIUM_BAR__LEFT,
+    AQUARIUM_BAR__WIDTH,
+    AQUARIUM__TOP,
+    AQUARIUM__HEIGHT,
+    AQUARIUM__LEFT,
+    AQUARIUM__WIDTH,
+    FISHING_ROD_PATHS,
+    AQUARIUM_PATH,
+    TMP_AQUARIUM_PATH,
+)
 
-FISHING_ROD__TOP = 1315
-FISHING_ROD__HEIGHT = 70
-FISHING_ROD__LEFT = 925
-FISHING_ROD__WIDTH = 70
+# FISHING_ROD__TOP = 1315
+# FISHING_ROD__HEIGHT = 70
+# FISHING_ROD__LEFT = 925
+# FISHING_ROD__WIDTH = 70
 
-AQUARIUM_BAR__TOP = 675
-AQUARIUM_BAR__HEIGHT = 700
-AQUARIUM_BAR__LEFT = 2230
-AQUARIUM_BAR__WIDTH = 50
+# AQUARIUM_BAR__TOP = 675
+# AQUARIUM_BAR__HEIGHT = 700
+# AQUARIUM_BAR__LEFT = 2230
+# AQUARIUM_BAR__WIDTH = 50
 
-AQUARIUM__TOP = 710
-AQUARIUM__HEIGHT = 100
-AQUARIUM__LEFT = 300
-AQUARIUM__WIDTH = 1975
+# AQUARIUM__TOP = 710
+# AQUARIUM__HEIGHT = 100
+# AQUARIUM__LEFT = 300
+# AQUARIUM__WIDTH = 1975
 
-FISHING_ROD_PATHS = [
-    "data\\launched_fishing_rod.png",
-    "data\\unlaunched_fishing_rod.png",
-]
+# FISHING_ROD_PATHS = [
+#     "data\\launched_fishing_rod.png",
+#     "data\\unlaunched_fishing_rod.png",
+# ]
 
-AQUARIUM_PATH = "data\\aquarium.png"
+# AQUARIUM_PATH = "data\\aquarium.png"
 
-TMP_AQUARIUM_PATH = "screenshots\\aquarium_screenshot.png"
+# TMP_AQUARIUM_PATH = "screenshots\\aquarium_screenshot.png"
 
 imagesHelper = Images()
 fishHelper = Fish()
