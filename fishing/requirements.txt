@@ -1,0 +1,7 @@
+pillow
+imagehash
+numpy
+opencv-python
+matplotlib
+pywin32
+keyboard
