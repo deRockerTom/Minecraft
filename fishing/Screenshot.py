@@ -14,7 +14,8 @@ class Screenshot:
         Take a screenshot of the specified area of the screen.
         """
         screenshot = ImageGrab.grab(
-            bbox=(self.left, self.top, self.left + self.width, self.top + self.height)
+            bbox=(self.left, self.top, self.left + self.width, self.top + self.height),
+            all_screens=True,
         )
         screenshot.save(self.path)
         screenshot.close()

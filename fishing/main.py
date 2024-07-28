@@ -6,7 +6,7 @@ import win32gui
 import win32api
 import win32con
 import keyboard
-from constants import (
+from constants1080 import (
     FISHING_ROD__TOP,
     FISHING_ROD__HEIGHT,
     FISHING_ROD__LEFT,
@@ -23,30 +23,6 @@ from constants import (
     AQUARIUM_PATH,
     TMP_AQUARIUM_PATH,
 )
-
-# FISHING_ROD__TOP = 1315
-# FISHING_ROD__HEIGHT = 70
-# FISHING_ROD__LEFT = 925
-# FISHING_ROD__WIDTH = 70
-
-# AQUARIUM_BAR__TOP = 675
-# AQUARIUM_BAR__HEIGHT = 700
-# AQUARIUM_BAR__LEFT = 2230
-# AQUARIUM_BAR__WIDTH = 50
-
-# AQUARIUM__TOP = 710
-# AQUARIUM__HEIGHT = 100
-# AQUARIUM__LEFT = 300
-# AQUARIUM__WIDTH = 1975
-
-# FISHING_ROD_PATHS = [
-#     "data\\launched_fishing_rod.png",
-#     "data\\unlaunched_fishing_rod.png",
-# ]
-
-# AQUARIUM_PATH = "data\\aquarium.png"
-
-# TMP_AQUARIUM_PATH = "screenshots\\aquarium_screenshot.png"
 
 imagesHelper = Images()
 fishHelper = Fish()
@@ -129,7 +105,6 @@ def click() -> None:
     win32gui.SendMessage(window, win32con.WM_RBUTTONUP, win32con.MK_RBUTTON, lParam)
 
 
-# take_aquarium_screenshot()
 while not exitProgram:
     sleep(0.2)
     is_ui = is_in_ui()
