@@ -30,4 +30,4 @@ def click() -> None:
 
 while not exitProgram:
     click()
-    sleep(0.6)
+    sleep(CLICK_TIMING)
