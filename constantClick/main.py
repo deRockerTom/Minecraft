@@ -15,7 +15,25 @@ def quit():
 keyboard.add_hotkey("ctrl+q", lambda: quit())
 
 
-window = win32gui.FindWindow(None, "Minecraft 1.21 - Blocaria - Boxed")
+def find_minecraft_process(hwnd, process_ids):
+    text = win32gui.GetWindowText(hwnd)
+    if "Minecraft 1." in text:
+        process_ids.append(hwnd)
+
+
+win32gui.EnumWindows(find_minecraft_process, process_id := [])
+
+if len(process_id) == 0:
+    print("Minecraft not found")
+    exit(1)
+
+if len(process_id) > 1:
+    print("Multiple minecraft instances found, using the first one")
+
+print(f"Using process {win32gui.GetWindowText(process_id[0])}")
+
+window = process_id[0]
+
 lParam = win32api.MAKELONG(100, 100)
 
 win32gui.SendMessage(window, win32con.WM_LBUTTONDOWN, win32con.MK_LBUTTON, lParam)

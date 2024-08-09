@@ -6,7 +6,7 @@ import win32gui
 import win32api
 import win32con
 import keyboard
-from constants1080 import (
+from constants_electro import (
     FISHING_ROD__TOP,
     FISHING_ROD__HEIGHT,
     FISHING_ROD__LEFT,
@@ -23,6 +23,7 @@ from constants1080 import (
     AQUARIUM_PATH,
     TMP_AQUARIUM_PATH,
 )
+import mouse
 
 imagesHelper = Images()
 fishHelper = Fish()
@@ -94,19 +95,39 @@ def take_aquarium_screenshot() -> None:
     aquarium_screenshot.take()
 
 
+def find_minecraft_process(hwnd, process_ids):
+    text = win32gui.GetWindowText(hwnd)
+    if "Minecraft 1." in text:
+        process_ids.append(hwnd)
+
+
+win32gui.EnumWindows(find_minecraft_process, process_id := [])
+
+if len(process_id) == 0:
+    print("Minecraft not found")
+    exit(1)
+
+if len(process_id) > 1:
+    print("Multiple minecraft instances found, using the first one")
+
+print(f"Using process {win32gui.GetWindowText(process_id[0])}")
+
+window = process_id[0]
+
+
 def click() -> None:
     """
     Click the mouse on the minecraft window
     """
-    window = win32gui.FindWindow(None, "Minecraft 1.21 - Blocaria - Boxed")
     lParam = win32api.MAKELONG(100, 100)
 
     win32gui.SendMessage(window, win32con.WM_RBUTTONDOWN, win32con.MK_RBUTTON, lParam)
     win32gui.SendMessage(window, win32con.WM_RBUTTONUP, win32con.MK_RBUTTON, lParam)
 
 
+i = 0
 while not exitProgram:
-    sleep(0.2)
+    sleep(0.1)
     is_ui = is_in_ui()
 
     if not is_ui:
@@ -121,3 +142,9 @@ while not exitProgram:
         if should_click:
             print("Should fish, clicking")
             click()
+    if i % 200 == 0:
+        print("Checking")
+        mouse._os_mouse.move_relative(5, 0)
+        sleep(0.5)
+        mouse._os_mouse.move_relative(-5, 0)
+    i += 1
