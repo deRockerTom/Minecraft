@@ -1,0 +1,6 @@
+constants/*
+data/*
+!constants/constants.py
+!data/aquarium.png
+!data/launched_fishing_rod.png
+!data/unlaunched_fishing_rod.png

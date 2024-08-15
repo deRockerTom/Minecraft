@@ -6,7 +6,7 @@ import win32gui
 import win32api
 import win32con
 import keyboard
-from constants_electro import (
+from constants.constants import (
     FISHING_ROD__TOP,
     FISHING_ROD__HEIGHT,
     FISHING_ROD__LEFT,
