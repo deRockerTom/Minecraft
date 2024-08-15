@@ -6,7 +6,7 @@ from time import sleep
 
 exitProgram = False
 
-CLICK_TIMING = 0.5
+CLICK_TIMING = 0.55
 
 
 def quit():

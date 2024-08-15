@@ -23,7 +23,6 @@ from constants_electro import (
     AQUARIUM_PATH,
     TMP_AQUARIUM_PATH,
 )
-import mouse
 
 imagesHelper = Images()
 fishHelper = Fish()
@@ -125,7 +124,6 @@ def click() -> None:
     win32gui.SendMessage(window, win32con.WM_RBUTTONUP, win32con.MK_RBUTTON, lParam)
 
 
-i = 0
 while not exitProgram:
     sleep(0.1)
     is_ui = is_in_ui()
@@ -142,9 +140,3 @@ while not exitProgram:
         if should_click:
             print("Should fish, clicking")
             click()
-    if i % 200 == 0:
-        print("Checking")
-        mouse._os_mouse.move_relative(5, 0)
-        sleep(0.5)
-        mouse._os_mouse.move_relative(-5, 0)
-    i += 1
