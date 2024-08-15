@@ -61,7 +61,6 @@ while not exitProgram:
     if launch:
         print("Launching")
         for i in range(0x31, 0x3A):
-            lParam = win32api.MAKELONG(100, 100)
             win32api.SendMessage(window, win32con.WM_KEYDOWN, i, 0)
             win32api.SendMessage(window, win32con.WM_KEYUP, i, 0)
             sleep(CLICK_TIMING)
