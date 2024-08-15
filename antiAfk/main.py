@@ -27,8 +27,8 @@ while not exitProgram:
         mouse._os_mouse.move_relative(j < x and -2 or 0, j < y and 2 or 0)
         sleep(0.02)
     if i % 5 == 4:
-        sleep(0.1)
         keyboard.press_and_release("!")
+        sleep(0.1)
         keyboard.write("feed")
         keyboard.press_and_release("RETURN")
     i += 1
