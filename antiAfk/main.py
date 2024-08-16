@@ -16,6 +16,8 @@ keyboard.add_hotkey("ctrl+q", lambda: quit())
 i = 0
 while not exitProgram:
     sleep(60)
+    if exitProgram:
+        break
     x = randint(5, 15)
     y = randint(5, 15)
     print("Checking")
