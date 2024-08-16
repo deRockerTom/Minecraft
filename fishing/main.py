@@ -6,7 +6,7 @@ import win32gui
 import win32api
 import win32con
 import keyboard
-from constants.constants import (
+from constants.constants_electro import (
     FISHING_ROD__TOP,
     FISHING_ROD__HEIGHT,
     FISHING_ROD__LEFT,
@@ -125,7 +125,7 @@ def click() -> None:
 
 
 while not exitProgram:
-    sleep(0.1)
+    sleep(0.02)
     is_ui = is_in_ui()
 
     if not is_ui:
@@ -133,6 +133,7 @@ while not exitProgram:
         if not fishing:
             print("Not fishing, clicking")
             click()
+            sleep(0.5)
 
     if is_ui:
         take_aquarium_screenshot()
@@ -140,3 +141,4 @@ while not exitProgram:
         if should_click:
             print("Should fish, clicking")
             click()
+            sleep(0.02)
